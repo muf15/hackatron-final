@@ -1,0 +1,77 @@
+.find-new-container {
+  position: relative; /* Ensure positioning context */
+  overflow: auto; /* Allow scrolling */
+  height: auto; /* Ensure it can expand */
+}
+
+.background-image {
+  position: relative; /* Set relative for overlay positioning */
+  background: url("path_to_your_background_image.jpg") no-repeat center center; /* Replace with actual image */
+  background-size: cover; /* Ensure it covers the area */
+  height: 300px; /* Adjust based on your design */
+}
+
+.text-overlay {
+  position: absolute; /* Position over background */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Translate for perfect centering */
+  text-align: center; /* Center text */
+  color: white; /* Text color */
+  z-index: 10; /* Ensure it appears above background */
+}
+
+.action-buttons {
+  display: flex; /* Flex for buttons */
+  justify-content: center; /* Center buttons */
+  margin-bottom: 20px; /* Space below buttons */
+}
+
+.action-text {
+  margin: 0 10px; /* Space between buttons */
+  cursor: pointer; /* Pointer cursor */
+  padding: 5px 10px; /* Padding for clickable area */
+  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.action-text:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ddd;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Optional for better readability */
+}
+
+.description {
+  font-size: 18px;
+  max-width: 600px;
+  line-height: 1.5;
+  margin: 0 20px;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5); /* Optional for better readability */
+}
+
+@media (max-width: 768px) {
+  .action-buttons {
+    flex-direction: column;
+    width: 80%;
+  }
+
+  .action-text {
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+}

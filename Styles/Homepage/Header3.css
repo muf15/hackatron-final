@@ -1,0 +1,97 @@
+/* Global Font Imports */
+@import url("@fontsource/playfair-display"); /* for Ishq-e */
+@import url("@fontsource/poppins"); /* for Udaipur and rest */
+
+.header3-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://wallpapercave.com/wp/wp6736637.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* dark overlay */
+}
+
+.header3-content {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  color: white;
+  max-width: 600px;
+}
+
+.badge {
+  background: #333;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+}
+
+.header3-title {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+
+@import url("@fontsource/great-vibes"); /* Elegant cursive font for Ishq-e */
+@import url("@fontsource/poppins"); /* Bold, modern font for Udaipur */
+
+.ishq-e {
+    font-family: "Dancing Script", cursive;
+    font-size: 3.5rem;
+    font-style: normal;
+    letter-spacing: 0.5px;
+    color: white;
+  }
+  
+.udaipur {
+  font-family: "Poppins", sans-serif;
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-top: -10px;
+}
+
+.header3-description {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-top: 15px;
+}
+
+.traveler-info {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.traveler-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.traveler-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.traveler-name {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+}
+
+.traveler-role {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+  color: #bbb;
+}

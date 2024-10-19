@@ -1,0 +1,145 @@
+/* General container */
+.signup-container {
+  display: flex;
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  overflow: hidden; /* Prevent scrolling */
+}
+
+/* Left Section */
+.signup-left {
+  flex: 1; /* Takes up half of the screen */
+  background-image: url("Assets/graffiti-1108415_1280.jpg"); /* Replace with the actual path */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: white;
+  padding: 50px;
+}
+
+.signup-left h1 {
+  font-size: 3rem; /* Large title */
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.signup-left p {
+  font-size: 1.2rem; /* Larger font for readability */
+  max-width: 400px;
+}
+
+/* Right Section */
+.signup-right {
+  flex: 1; /* Takes up half of the screen */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f7f7;
+}
+
+.signup-form-container {
+  background-color: white;
+  padding: 40px;
+  width: 100%; /* Full width for mobile */
+  max-width: 350px; /* Limit width for larger screens */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* Add Signup heading */
+.signup-form-container h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Form labels and input */
+.signup-form-container label {
+  font-size: 0.9rem; /* Label size */
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.signup-form-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem; /* Ensure text is readable */
+}
+
+/* Button styles */
+.signup-button {
+  width: 100%;
+  padding: 12px;
+  background-color: black; /* Button color */
+  color: white; /* Text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.signup-button:hover {
+  background-color: #444; /* Darker shade on hover */
+}
+
+/* Social Login Buttons */
+.social-logins {
+  display: flex;
+  flex-direction: column;
+}
+
+.social-login {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Only Google signup */
+.social-login.google {
+  background-color: #db4437;
+  color: white;
+}
+
+.social-login.google:hover {
+  background-color: #c13730; /* Darker shade on hover */
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .signup-left h1 {
+    font-size: 2.5rem; /* Smaller title on mobile */
+  }
+
+  .signup-left p {
+    font-size: 1rem; /* Smaller paragraph on mobile */
+  }
+
+  .signup-form-container {
+    padding: 20px; /* Reduce padding on mobile */
+  }
+
+  .signup-button {
+    padding: 10px; /* Smaller button padding */
+  }
+}

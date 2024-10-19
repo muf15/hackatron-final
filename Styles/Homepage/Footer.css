@@ -1,0 +1,44 @@
+.footer-container {
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  position: relative; /* Set relative positioning for child elements */
+  background-color: black; /* Set background color */
+  width: 100%; /* Full width */
+  height: 300px; /* Set fixed height */
+  padding: 20px; /* Padding inside the container */
+  margin: 50px 0; /* Margin above and below */
+  border-radius: 10px; /* Rounded corners */
+  overflow: hidden; /* Prevent overflow from video */
+  box-sizing: border-box; /* Include padding in height and width */
+  overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+.footer-image {
+  position: absolute; /* Position image absolutely */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  width: 100%; /* Cover full width */
+  height: 100%; /* Cover full height */
+  background-position: center; /* Center the image */
+  background-size: cover; /* Cover the entire area */
+  border-radius: 10px; /* Match the border radius */
+  z-index: 0; /* Ensure image is behind the text */
+}
+
+.footer-text {
+  position: relative; /* Position text normally */
+  color: white; /* Set text color */
+  font-size: 2rem; /* Font size */
+  font-weight: bold; /* Bold text */
+  text-align: left; /* Align text to the left */
+  padding: 20px; /* Add padding around the text */
+  z-index: 2; /* Ensure text is above the image */
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.5)
+  ); /* Linear gradient background */
+  border-radius: 5px; /* Rounded corners for the text background */
+  max-width: 90%; /* Set max width to control the text area */
+}

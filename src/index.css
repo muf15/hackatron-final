@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.marker-0 {
+  background-color: red; /* Change to your preferred color */
+}
+
+.marker-1 {
+  background-color: blue;
+}
+
+.marker-2 {
+  background-color: green;
+}
+
+.marker-3 {
+  background-color: yellow;
+}
+
+.marker-4 {
+  background-color: orange;
+}

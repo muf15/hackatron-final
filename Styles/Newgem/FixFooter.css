@@ -1,0 +1,67 @@
+.fix-footer-container {
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+  padding: 40px; /* Increased padding for better spacing */
+  text-align: center; /* Center align text */
+  border-top: 5px solid #ffcc00; /* Stylish top border for emphasis */
+}
+
+.section-title {
+  font-size: 2rem; /* Larger font size for title */
+  font-weight: bold; /* Bold font */
+  margin-bottom: 30px; /* Space below the title */
+  text-transform: uppercase; /* Uppercase for a stylish look */
+  letter-spacing: 1px; /* Slight spacing for a clean look */
+}
+
+.card-container {
+  display: flex; /* Flexbox for card layout */
+  gap: 20px; /* Space between cards */
+  justify-content: center; /* Center the cards */
+  flex-wrap: wrap; /* Allow cards to wrap */
+}
+
+.info-card {
+  background-size: cover; /* Cover the entire card */
+  background-position: center; /* Center the background image */
+  width: 300px; /* Fixed width */
+  height: 200px; /* Fixed height */
+  border-radius: 15px; /* Rounded corners */
+  position: relative; /* Position for overlay */
+  overflow: hidden; /* Hide overflow */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: transform 0.3s; /* Smooth scaling on hover */
+}
+
+.info-card:hover {
+  transform: scale(1.05); /* Scale up on hover for emphasis */
+}
+
+.card-overlay {
+  position: absolute; /* Overlay on top of card */
+  bottom: 0; /* Align to the bottom */
+  left: 0; /* Align to the left */
+  right: 0; /* Align to the right */
+  background: rgba(0, 0, 0, 0.6); /* Darker overlay for better readability */
+  color: #fff; /* White text */
+  padding: 10px 15px; /* Padding inside overlay */
+  display: flex; /* Flex for overlay layout */
+  justify-content: space-between; /* Space between text and arrow */
+  align-items: center; /* Center vertically */
+  border-bottom-left-radius: 15px; /* Match card corners */
+  border-bottom-right-radius: 15px; /* Match card corners */
+}
+
+.card-text {
+  font-size: 1rem; /* Font size for text */
+  font-weight: bold; /* Bold font for emphasis */
+}
+
+.arrow {
+  font-size: 1.5rem; /* Increase arrow size */
+  transition: transform 0.3s; /* Smooth transition for arrow movement */
+}
+
+.info-card:hover .arrow {
+  transform: translateX(5px); /* Move arrow on hover */
+}
