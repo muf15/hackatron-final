@@ -1,10 +1,5 @@
-import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  useLocation,
-} from "react-router-dom";
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import Header from "../component/Homepage/Header";
 import Cards from "../component/Homepage/Cards";
 import Header3 from "../component/Homepage/Header3";
@@ -16,6 +11,22 @@ import NewLocation from "../component/NewGem/NewLocation.jsx"; // Ensure this im
 
 const App = () => {
   const location = useLocation(); // Get the current location
+  const navigate = useNavigate(); // Initialize the navigate function
+
+  // Handle JWT token from URL after Google sign-in
+  useEffect(() => {
+    // Check if the token is present in the URL after Google login redirect
+    const urlParams = new URLSearchParams(window.location.search);
+    const token = urlParams.get("token");
+
+    if (token) {
+      // Store the token (e.g., in localStorage or sessionStorage)
+      localStorage.setItem("authToken", token);
+
+      // Optionally, navigate to a protected page or homepage
+      navigate("/");
+    }
+  }, [navigate]);
 
   return (
     <>

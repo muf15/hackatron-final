@@ -1,10 +1,6 @@
-
-
 import React from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
 import "../../Styles/Login/Login.css"; // Adjust the path according to your project structure
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { auth } from "../../Firebase/firebase.jsx";
 
 const Login = () => {
   const navigate = useNavigate(); // Initialize the navigate function
@@ -16,16 +12,9 @@ const Login = () => {
   const handleGoogle = async (e) => {
     e.preventDefault(); // Prevent any default behavior
 
-    const provider = new GoogleAuthProvider();
-
     try {
-      const result = await signInWithPopup(auth, provider); // Wait for the sign-in to complete
-
-      // You can access the signed-in user's info using result.user if needed
-      console.log("User signed in:", result.user);
-
-      // Navigate to the homepage after successful sign-in
-      navigate("/");
+      // Redirect to the backend API that handles Google login
+      window.location.href = "http://localhost:3000/api/auth/google";
     } catch (error) {
       console.error("Google sign-in error:", error);
       // Handle the error (e.g., display an error message)
