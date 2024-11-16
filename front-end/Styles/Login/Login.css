@@ -78,6 +78,7 @@
   font-weight: bold;
   margin-bottom: 5px;
   display: block;
+  color: #000000;
 }
 
 .login-form-container input {
@@ -87,6 +88,7 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem; /* Ensure text is readable */
+  color: #000000;
 }
 
 /* Button styles */
