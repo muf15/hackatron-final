@@ -63,6 +63,7 @@
   font-weight: bold;
   margin-bottom: 5px;
   display: block;
+  color: #333; /* Dark color for visibility */
 }
 
 .signup-form-container input {
@@ -142,4 +143,29 @@
   .signup-button {
     padding: 10px; /* Smaller button padding */
   }
+}
+
+/* Style for input placeholders */
+.signup-form-container input::placeholder {
+  color: #888; /* Light gray for placeholder text */
+  font-style: italic; /* Optional: make placeholder text italic */
+}
+
+/* Style for input fields */
+.signup-form-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #333; /* Dark text for visibility */
+  background-color: #fff; /* White background */
+}
+
+/* Highlight input when focused */
+.signup-form-container input:focus {
+  border-color: #000; /* Black border on focus */
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
 }

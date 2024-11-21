@@ -2,12 +2,22 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const passport = require("passport");
+const cors = require("cors"); // Import the cors package
 const authRoutes = require("./auth");
 require("./db");
 
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Enable CORS
+app.use(
+  cors({
+    origin: "http://localhost:5173", // Replace with your frontend's URL
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allowed HTTP methods
+    credentials: true, // Allow cookies and headers like Authorization
+  })
+);
 
 // Body Parser Middleware
 app.use(express.json());

@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
-import { BrowserRouter as Router, Route, Routes, useLocation, useNavigate } from "react-router-dom";
+// App.jsx
+import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, Route, Routes, useLocation, useNavigate, Navigate } from "react-router-dom";
 import Header from "../component/Homepage/Header";
 import Cards from "../component/Homepage/Cards";
 import Header3 from "../component/Homepage/Header3";
@@ -12,21 +13,37 @@ import NewLocation from "../component/NewGem/NewLocation.jsx"; // Ensure this im
 const App = () => {
   const location = useLocation(); // Get the current location
   const navigate = useNavigate(); // Initialize the navigate function
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   // Handle JWT token from URL after Google sign-in
   useEffect(() => {
-    // Check if the token is present in the URL after Google login redirect
     const urlParams = new URLSearchParams(window.location.search);
     const token = urlParams.get("token");
 
     if (token) {
-      // Store the token (e.g., in localStorage or sessionStorage)
+      // Store the token in localStorage
       localStorage.setItem("authToken", token);
 
+      // Set authentication state to true
+      setIsAuthenticated(true);
+
       // Optionally, navigate to a protected page or homepage
-      navigate("/");
+      navigate("/fix-new"); // Redirect to the FixNew page
+    } else {
+      // Check if there's a valid token in localStorage
+      const storedToken = localStorage.getItem("authToken");
+      if (storedToken) {
+        setIsAuthenticated(true);
+      }
     }
   }, [navigate]);
+
+  // Logout function to remove token and update auth state
+  const logout = () => {
+    localStorage.removeItem("authToken");
+    setIsAuthenticated(false);
+    navigate("/login"); // Redirect to login page after logout
+  };
 
   return (
     <>
@@ -47,11 +64,14 @@ const App = () => {
         />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-        {/* Add the Sign-Up route */}
         <Route path="/fix-new" element={<FixNew />} />
-        {/* Add the Fix New route */}
         <Route path="/new-location" element={<NewLocation />} />
-        {/* Add the New Location route */}
+        
+        {/* If not authenticated, redirect to /login */}
+        <Route
+          path="/fix-new"
+          element={isAuthenticated ? <FixNew /> : <Navigate to="/login" />}
+        />
       </Routes>
       {/* Conditionally render Footer only if not on the login, sign-up, fix-new, or new-location pages */}
       {location.pathname !== "/login" &&
